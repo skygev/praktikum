@@ -1,0 +1,118 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+.page {
+  min-inline-size: 360px;
+  margin: 0;
+  color: var(--text-color, #312A4E);
+  font-family: var(--main-font, sans-serif);
+  background-color: var(--bg-color, #F3EFEC);
+}
+
+p,
+h1,
+h2,
+h3,
+blockquote,
+ul,
+ol,
+li,
+figure {
+  margin: 0;
+}
+
+:root {
+  --bg-color: #F3EFEC;
+  --text-color: #312A4E;
+  --accent-color: #FFAB6B;
+
+  --main-font: Raleway;
+  --accent-font: 'STIX Two Text';
+
+} 
+
+.heading {
+  font-family: var(--accent-font, serif);
+  font-weight: 600;
+  line-height: 90%;
+  text-align: center;
+}
+
+.content-section {
+  padding: 0 5vi;
+}
+
+.header-title { 
+  margin-block-end: 40px; /* на 2-х макетах отступ совпадает, делаем фикс */
+  font-size: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem); /* применяем к child */
+}
+
+.content__title {
+  font-size: 30px;
+}
+
+.content__text-block {
+  font-size: 18px;
+}
+
+.content__text-block .content__paragragh:not(:last-of-type) {
+  margin-block-end: 1.5em;
+}
+
+.content__paragragh a{ /* цвет ссылки как у родителя */
+  color: inherit;
+}
+
+.content__blockquote {
+  inline-size: 75%;
+  margin: 0 auto 1.5em;
+  font-style: italic;
+  line-height: 2; /* ==200% */
+}
+
+.content__list {
+  padding: 0 0 0 40px;
+  list-style: none;
+}
+
+.content__list li{
+  position: relative;
+}
+
+.content__list li:not(:last-of-type) {
+  margin-block-end: 10px;
+}
+
+.content__list li::before {
+  content: '';
+  position: absolute;
+  inline-size: 15px;
+  block-size: 15px;
+  margin-block-start: -7.5px;
+  background-image: url(../images/marker-light.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  inset-block-start: 50%;
+  inset-inline-start: -25px;
+}
+
+.content__text-block_type_first-lettered .content__paragragh:first-of-type::first-letter {
+  display: inline-block;
+  margin-inline-end: 1px;
+  padding: 0 4px;
+  font-weight: 700;
+  font-size: 30px;
+  background-color: var(--accent-color);
+
+}
+
+.content__picture-caption {
+  border-block-end: 1px solid currentColor;
+  padding: 20px;
+  font-size: 18px;
+  text-align: center;
+}
